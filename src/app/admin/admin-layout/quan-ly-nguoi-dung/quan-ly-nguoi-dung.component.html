@@ -6,9 +6,7 @@
     <button type="button" #btnmodal class="btn btn-secondary mr-3"  (click)="Change()" data-toggle="modal" data-target="#exampleModal">
       Thêm Người Dùng Mới
     </button>
-    <button class="btn btn-danger">Xóa Nhiều Người Dùng</button>
-    <br>
-    <button class="btn btn-primary mt-3">Tìm Kiếm Người Dùng</button>
+    <button class="btn btn-primary">Tìm Kiếm Người Dùng</button>
     <!-- Button trigger modal -->
 
 
@@ -122,7 +120,7 @@
         <tbody>
           <tr *ngFor="let item of DS_ND">
             <td>
-              <input type="checkbox">
+              <input [attr.data-taikhoan]="item.TaiKhoan" type="checkbox">
             </td>
             <td>{{item.TaiKhoan}}</td>
             <td>{{item.MatKhau}}</td>

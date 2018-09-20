@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { TransformDataService } from '../../../services/transform-data.service';
-import { Phim } from '../../../../app/models/phim.model'
+import { Phim} from '../../../../app/models/phim.model'
 import { PhimService } from '../../../services/phim.service';
 import { Inject }  from '@angular/core';
 import { DOCUMENT } from '@angular/common'; 
 import { element } from 'protractor';
+import swal from 'sweetalert2'
+
 @Component({
   selector: 'app-quan-ly-phim',
   templateUrl: './quan-ly-phim.component.html',
@@ -23,6 +25,27 @@ export class QuanLyPhimComponent implements OnInit {
   //   this.transformSV.TransformData.emit(this.status);
 
   // }
+  ThemVaSuaPhim(phim: Phim,hinhanh:any) {
+    this.element1 = document.getElementById('btn-modal');
+    if (this.element1.innerHTML == "Thêm") {
+      this.ThemPhim(phim,hinhanh)
+
+    }
+    else {
+        this.phimSV.SuaPhim(phim).subscribe(
+      (kq:any)=>{
+        console.log(kq);  
+        swal({
+          position: 'center',
+          type: 'success',
+          title: 'Sửa thành công',
+          showConfirmButton: false,
+          timer: 2000
+        })
+      }
+    )
+    }
+  }
   Change()
   {
     this.Phim_temp= new Phim;
@@ -30,11 +53,14 @@ export class QuanLyPhimComponent implements OnInit {
     this.element1.innerHTML="Thêm";
     this.element1=document.getElementById('title-modal');
     this.element1.innerHTML="Thêm Phim Mới";
-    
+
     
   }
-  SuaPhim(object:any)
+
+  ClickSuaPhim(object:any)
   {
+
+
     this.element1=document.getElementById('btn-modal');
     this.element1.innerHTML="Sửa";
     this.element1=document.getElementById('title-modal');
@@ -62,6 +88,7 @@ export class QuanLyPhimComponent implements OnInit {
   constructor(@Inject(DOCUMENT) document,private transformSV: TransformDataService, private phimSV: PhimService) { }
   ThemPhim(phim: Phim, hinhAnh: any) {
     // console.log(hinhAnh);
+
     phim.MaPhim = "1";
     phim.HinhAnh = hinhAnh[0].name;
     this.phimSV.ThemPhim(phim).subscribe(
@@ -70,19 +97,54 @@ export class QuanLyPhimComponent implements OnInit {
         this.phimSV.Upload(phim.TenPhim, hinhAnh[0]).subscribe(
           (kq: any) => {
             console.log(kq);
+            swal({
+              position: 'center',
+              type: 'success',
+              title: 'Thêm thành công',
+              showConfirmButton: false,
+              timer: 2000
+            })
           }
         )
       }
     )
   }
   XoaPhim(MaPhim: string) {
-    this.phimSV.XoaPhim(MaPhim).subscribe(
-      (kq: any) => {
-        console.log(kq);
+    const swalWithBootstrapButtons = swal.mixin({
+      confirmButtonClass: 'btn btn-success',
+      cancelButtonClass: 'btn btn-danger',
+      buttonsStyling: false,
+    })
+    
+    swalWithBootstrapButtons({
+      title: 'Bạn có muốn xóa không?',
+      text: "Bạn sẽ không phục hồi lại được!!",
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Có!',
+      cancelButtonText: 'Không',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.value) {
+        this.phimSV.XoaPhim(MaPhim).subscribe(
+          (kq: any) => {
+            console.log(kq);
+            swalWithBootstrapButtons(
+          
+              'Đã xóa thành công!',
+              'Phim đã được xóa',
+              'success'
+            )
+          }
+        )
+      
       }
-    )
+    })
+    
   }
   ngOnInit() {
+    
+
     this.transformSV.TransformData.subscribe(
       (kq: any) => {
         this.status = kq;

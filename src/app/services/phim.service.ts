@@ -12,6 +12,7 @@ export class PhimService {
   constructor(private _http: Http) {
 
   }
+
   public LayDanhSachPhim(): Observable<any> {
     let apilayDanhSachPhim = "http://sv2.myclass.vn/api/QuanLyPhim/LayDanhSachPhim?MaNhom=GP06"
     let Observe = this._http.get(apilayDanhSachPhim).pipe(
@@ -73,6 +74,15 @@ export class PhimService {
 
     }
     let Observe = this._http.get(apiDatVe).pipe(
+      map((result: Response) => result.json()));
+    return Observe;
+  }
+  public SuaPhim(phim:Phim)
+  {
+    let apiSuaPhim = "http://sv2.myclass.vn/api/QuanLyPhim/CapNhatPhim";
+    let header = new Headers();
+    header.append('Content-Type', 'application/json;charset=UTF-8');
+    let Observe = this._http.post(apiSuaPhim, phim, { headers: header }).pipe(
       map((result: Response) => result.json()));
     return Observe;
   }

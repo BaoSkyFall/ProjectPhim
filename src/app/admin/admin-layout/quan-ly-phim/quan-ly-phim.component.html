@@ -6,9 +6,7 @@
     <button type="button" #btnmodal class="btn btn-secondary mr-3" (click)="Change()" data-toggle="modal" data-target="#exampleModal">
       Thêm Phim Mới
     </button>
-    <button class="btn btn-danger">Xóa Nhiều Phim</button>
-    <br>
-    <button class="btn btn-primary mt-3">Tìm Kiếm Phim</button>
+    <button class="btn btn-primary">Tìm Kiếm Phim</button>
     <!-- Button trigger modal -->
 
 
@@ -22,7 +20,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <form #formThemphim="ngForm" (ngSubmit)="ThemPhim(formThemphim.value,hinhAnh.files)">
+            <form #formThemphim="ngForm" (ngSubmit)="ThemVaSuaPhim(formThemphim.value,hinhAnh.files)">
               <h4 class="display-4" id="title-modal">Thêm Phim </h4>
               <div class="form-group">
                 <label for="">Tên Phim: </label>
@@ -147,7 +145,7 @@
             [attr.data-ngaykhoichieu]="item.NgayKhoiChieu" 
             (click)="btnmodal.click()"
             
-            (click)="SuaPhim($event)" 
+            (click)="ClickSuaPhim($event)" 
             >Sửa</button>
 
         </tbody>
