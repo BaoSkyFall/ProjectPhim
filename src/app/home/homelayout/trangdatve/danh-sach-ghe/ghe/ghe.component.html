@@ -1,0 +1,12 @@
+<button 
+  *ngIf="!gheItem.DaDat;else gheDaDat"
+  class="btn m-2" 
+  (click)="DatGhe()"
+  [ngClass]="{'btn-success':!status,'btn-secondary':status}"
+  >{{ gheItem.TenGhe }}</button>
+
+<ng-template #gheDaDat>
+  <button class="btn btn-danger" style="cursor:not-allowed" disabled>
+    {{ gheItem.TenGhe }}
+  </button>
+</ng-template>

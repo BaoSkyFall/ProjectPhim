@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.owl-prev{
+    position: absolute;
+    top:30%;
+    left:-50px;
+} 
+.owl-next:hover span{
+    background: none;
+}
+.owl-prev span{
+    font-size:70px;
+}
+.owl-next{
+    position: absolute;
+    top:30%;
+    right:-50px;
+   
+} 
+.owl-next span{
+    font-size:70px;
+}

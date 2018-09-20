@@ -1,0 +1,112 @@
+<div class="container">
+  <div class="row">
+    <div class="col-5 mx-auto">
+      <form #formDangKy ="ngForm" (ngSubmit)="DangKy(formDangKy.value)">
+        <h4 class="display-4">Đăng Ký</h4>
+        <div class="form-group">
+          <label for="">Tài Khoản</label>
+          <input type="text" required #taikhoan='ngModel' class="form-control" name="TaiKhoan" ngModel>
+          <div *ngIf="taikhoan.errors && (taikhoan.touched || taikhoan.dirty)">
+            <div *ngIf="taikhoan.errors.required" class="alert alert-danger">
+              Vui lòng nhập tài khoản
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="">Mật Khẩu</label>
+          <input type="text" required minlength="6" maxlength="20" #matkhau='ngModel' class="form-control" name="MatKhau" ngModel>
+          <div *ngIf="matkhau.errors && (matkhau.touched || matkhau.dirty)">
+            <div *ngIf="matkhau.errors.required" class="alert alert-danger">
+              Vui lòng nhập mật khẩu
+            </div>
+            <div *ngIf="matkhau.errors.minlength || matkhau.errors.maxlength" class="alert alert-danger">
+              Mật khẩu phải từ 6 tới 20 kí tự
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="">Họ Tên: </label>
+          <input type="text" #hoten="ngModel" [pattern]='"^[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ" +
+          "ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềếểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ" +
+          "ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$"' class="form-control" name="HoTen" ngModel>
+          <div *ngIf="hoten.errors && (hoten.touched || hoten.dirty)">
+            <div *ngIf="hoten.errors.pattern" class="alert alert-danger">
+              Họ Tên phải là chữ cái.
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="">Email</label>
+          <input type="email" email #email="ngModel" class="form-control" name="Email" ngModel>
+          <div *ngIf="email.errors && (email.touched || email.dirty)">
+            <div *ngIf="email.errors.email" class="alert alert-danger">
+              Email không đúng định dạng
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="">Số ĐT</label>
+          <input type="text" class="form-control" name="SoDT" ngModel>
+        </div>
+        <div class="form-group">
+          <label for="">Mã Nhóm</label>
+          <select class="form-control" name="MaNhom" [(ngModel)]="Vl_Nhom">
+            <option *ngFor="let nhom of DanhSachNhom">
+              {{ nhom }}
+            </option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="">Loại Người Dùng: </label>
+          <input type="radio"  name="MaLoaiNguoiDung" ngModel value="KhachHang">Khách Hàng
+          <input type="radio"  name="MaLoaiNguoiDung" ngModel value="QuanTri">Quản Trị Viên
+        </div>
+        <div class="form-group">
+          <button class="btn btn-success" [disabled]="formDangKy.invalid" type="submit">Đăng Ký</button>
+          <button 
+            class="btn btn-primary" 
+            type="button" 
+            (click)="SetValue()"
+            >
+            Set value
+          </button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <table class="table bg-dark text-white">
+        <thead>
+          <tr>
+            <th>Tài khoản</th>
+            <th>Mật khẩu</th>
+            <th>Họ Tên</th>
+            <th>Email</th>
+            <th>Số ĐT</th>
+            <th>Mã Nhóm</th>
+            <th>Mã Loại Người Dùng</th>
+            <th>Ngày đăng ký</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let nguoiDung of mangNguoiDung">
+            <td>{{ nguoiDung.TaiKhoan | lowercase}}</td>
+            <td>{{ nguoiDung.MatKhau }}</td>
+            <td>{{ nguoiDung.HoTen | uppercase}}</td>
+            <td>{{ nguoiDung.Email | shortcut:15 }}</td>
+            <td>{{ nguoiDung.SoDT }}</td>
+            <td>{{ nguoiDung.MaNhom }}</td>
+            <td>{{ nguoiDung.MaLoaiNguoiDung }}</td>
+            <td> {{ today | date:'dd/MM/yyyy' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+

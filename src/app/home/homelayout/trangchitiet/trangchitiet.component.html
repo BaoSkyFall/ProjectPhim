@@ -1,0 +1,18 @@
+<img [src]="phimItem.HinhAnh" alt="">
+<p>{{phimItem.TenPhim}}</p>
+<iframe width="1000" height="667" [src]="trailerPhim | safe" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Ngày Chiếu</th>
+      <th>Các Suất Chiếu</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let lichChieu of phimItem.LichChieu">
+      <td>{{lichChieu.NgayChieuGioChieu |date:'dd-MM-yyyy'}}</td>
+      <td [routerLink]="['/datve',lichChieu.MaLichChieu]">{{lichChieu.NgayChieuGioChieu |date:'hh:mm'}}</td>
+      
+    </tr>
+  </tbody>
+</table>

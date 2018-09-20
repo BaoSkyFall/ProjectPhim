@@ -1,0 +1,5 @@
+<div class="movie__item item">
+  <img [src]="itemPhim.HinhAnh" alt="">
+  <p>{{ itemPhim.TenPhim }}</p>
+  <button [routerLink]="['/chitiet',itemPhim.MaPhim]">Xem Thêm</button>
+</div>

@@ -1,0 +1,13 @@
+<div class="col-12 text-center m-3">
+    <button 
+      class="btn mr-2" 
+      [ngClass]="{'btn-success':loaiPhimSwitch == 'phimdangchieu'}"
+      (click)="HienPhimDangChieu()">Phim Đang Chiếu</button>
+    <button 
+      [ngClass]="{'btn-success':loaiPhimSwitch == 'phimsapchieu'}"
+      class="btn" (click)="HienPhimSapChieu()">Phim Sắp Chiếu</button>
+</div>
+<div class="col-12 my-3" [ngSwitch]="loaiPhimSwitch">
+  <app-phim-dang-chieu *ngSwitchCase="'phimdangchieu'"></app-phim-dang-chieu>
+  <app-phim-sap-chieu *ngSwitchCase="'phimsapchieu'"></app-phim-sap-chieu>
+</div>
