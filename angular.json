@@ -26,20 +26,18 @@
               "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/owl.carousel/dist/assets/owl.carousel.min.css",
-              //2 file css em đã thêm
-              "src/assets/css/default.css",
-              "src/assets/css/packages.min.css"              
+              "node_modules/owl.carousel/dist/assets/owl.theme.default.min.css",
+              "src/assets/css/packages.min.css",
+              "src/assets/css/default.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/popper.js/dist/umd/popper.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "node_modules/owl.carousel/dist/owl.carousel.min.js",
-              //3 file jsem đã thêm
-              
-              "src/assets/js/packages.min.js",    
+              "src/assets/js/jquery.min.js",              
+              "src/assets/js/packages.min.js",
               "src/assets/js/scripts.min.js",
-              "src/assets/js/jquery.min.js"              
+              "node_modules/owl.carousel/dist/owl.carousel.min.js"
               
               
                 

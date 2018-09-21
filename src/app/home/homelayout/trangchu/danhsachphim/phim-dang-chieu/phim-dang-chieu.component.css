@@ -2,7 +2,10 @@
     position: absolute;
     top:30%;
     left:-50px;
+    color: black;
 } 
+
+
 .owl-next:hover span{
     background: none;
 }

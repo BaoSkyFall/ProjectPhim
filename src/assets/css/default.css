@@ -22,6 +22,7 @@
     09. Footer
     10. Responsive
   
+    
   -------------------------------------------------------------------------*/
 .transition {
   -webkit-transition: all 0.25s ease;
@@ -319,7 +320,7 @@ header#header #header-search {
   transition: all 0.25s ease;
 }
 header#header #header-search:before {
-  content: url(../images/search.png);
+  content: url(../img/search.png);
   width: 30px;
   height: 30px;
   display: block;
@@ -1187,14 +1188,14 @@ body.sticky-menu.stick #header.menu-top-left #header-search {
   padding: 0 55px;
 }
 .wpc-testimonails .testimonial:before {
-  content: url(../images/qte-t.png);
+  content: url(../img/qte-t.png);
   position: absolute;
   top: 185px;
   left: 70px;
   z-index: -1;
 }
 .wpc-testimonails .testimonial:after {
-  content: url(../images/qte-b.png);
+  content: url(../img/qte-b.png);
   position: absolute;
   bottom: -25px;
   right: 60px;
@@ -2769,7 +2770,7 @@ input[type=submit].play:before {
 button.more:before,
 input[type=button].more:before,
 input[type=submit].more:before {
-  content: url(../images/btn-more.png);
+  content: url(../img/btn-more.png);
   font-family: Fontawesome;
   color: #fb802d;
   padding-right: 10px;
@@ -2788,7 +2789,7 @@ input[type=submit].more:hover {
 button.more:hover:before,
 input[type=button].more:hover:before,
 input[type=submit].more:hover:before {
-  content: url(../images/btn-more-white.png );
+  content: url(../img/btn-more-white.png );
   color: #fff;
 }
 .btn.go,
@@ -3287,7 +3288,7 @@ img.full-size {
 #order .order-content .entry-order-content #msform fieldset .wpc-content .order-ticket li select {
   width: 48px;
   margin-top: 30px;
-  background: url(../images/order-arrow.png) 85% no-repeat #f5f5f5;
+  background: url(../img/order-arrow.png) 85% no-repeat #f5f5f5;
 }
 #order .order-content .entry-order-content #msform fieldset.seat-content {
   width: 100%;
@@ -3300,7 +3301,7 @@ img.full-size {
   width: 100%;
   margin: 25px 0 35px 0;
   height: 45px;
-  background-image: url(../images/ScreenForSeating_450.png);
+  /* background-image: url(../img/ScreenForSeating_450.png); */
   background-repeat: no-repeat;
   display: block;
   content: '';
@@ -3341,7 +3342,7 @@ img.full-size {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: url(../images/order-arrow.png) 96% no-repeat #f5f5f5;
+  background: url(../img/order-arrow.png) 96% no-repeat #f5f5f5;
 }
 #order .order-content .entry-order-content #msform .action-button {
   box-shadow: none;
@@ -4108,6 +4109,7 @@ footer#footer .sub-footer .social-links a:hover {
 }
 .pvt50 {
   padding-top: 50px;
+
 }
 .pvt60 {
   padding-top: 60px;
@@ -4122,7 +4124,7 @@ footer#footer .sub-footer .social-links a:hover {
   padding-top: 90px;
 }
 .pvt85 {
-  padding-top: 85px;
+
 }
 .mv1 {
   margin-top: 10px;

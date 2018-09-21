@@ -1,5 +1,39 @@
-<div class="movie__item item">
+<!-- <div class="movie__item item">
   <img [src]="itemPhim.HinhAnh" alt="">
   <p>{{ itemPhim.TenPhim }}</p>
   <button [routerLink]="['/chitiet',itemPhim.MaPhim]">Xem Thêm</button>
-</div>
+</div> -->
+
+
+
+  <div class="movie-image" style="background-image:url('itemPhim.HinhAnh')">
+  <img [src]="itemPhim.HinhAnh" alt="">
+    
+    <div class="entry-hover">
+      <div class="entry-actions">
+        <a [routerLink]="['/chitiet',itemPhim.MaPhim]" class="btn-trailers video-player">Xem Thêm</a>
+        <a href="#order" class="btn-ticket order_btn ">Đặt Vé</a>
+      </div>
+    </div>
+    <div class="entry-desc">
+      <div class="rating">
+        <input name="stars" type="radio">
+        <label>☆</label>
+        <input name="stars" type="radio">
+        <label>☆</label>
+        <input name="stars" type="radio">
+        <label>☆</label>
+        <input name="stars" type="radio">
+        <label>☆</label>
+        <input name="stars" type="radio">
+        <label>☆</label>
+      </div>
+      <h3 class="entry-title">{{itemPhim.TenPhim}}</h3>
+      <ul class="entry-date">
+        <li>11 :00</li>
+        <li>13 :50</li>
+        <li>14 :00</li>
+        <li>18 :00</li>
+      </ul>
+    </div>
+  </div>

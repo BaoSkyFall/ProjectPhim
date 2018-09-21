@@ -1,6 +1,24 @@
-<div class="owl-carousel owl-carousel-1">
-  <div class="item" *ngFor="let phim of DanhSachPhimDangChieu">
-    <app-phim-item [itemPhim]="phim"></app-phim-item>
-  </div>
- 
-</div>
+<section class="section-content">
+    <div class="row ">
+      <div class="col-sm-12">
+        <div class="ticket-carousel pvt85">
+          <div class="swiper-container carousel-container movie-images" data-col="5">
+            <div class="swiper-wrapper owl-carousel owl-carousel-1 w-100">
+              <div class="swiper-slide item" *ngFor="let phim of DanhSachPhimDangChieu" style="width: 326px">
+                <app-phim-item [itemPhim]="phim"></app-phim-item>
+              </div>
+           
+            </div>
+          </div>
+         
+        </div>
+
+      </div>
+    </div>
+</section>
+    <!-- <div class="owl-carousel owl-carousel-1 w-100">
+      <div class="item" *ngFor="let phim of DanhSachPhimDangChieu">
+        <app-phim-item [itemPhim]="phim"></app-phim-item>
+      </div>
+
+    </div> -->
