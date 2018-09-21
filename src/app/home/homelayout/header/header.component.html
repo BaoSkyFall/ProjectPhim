@@ -1,26 +1,37 @@
-<header id="header">
-  <a href="#" routerLink="/" class="logo">
-      <img src="../../../../assets/img/web-logo.png" alt="">
-  </a>
-  <nav class="header__menu">
-      <ul>
-          <li>
-              <a href="#">Lịch chiếu</a>
-          </li>
-          <li>
-              <a href="#">Cụm rạp</a>
-          </li>
-          <li>
-              <a href="#">Tin tức</a>
-          </li>
-          <li>
-              <a href="#">Ứng dụng</a>
-          </li>
-      </ul>
+<header id="header" class="menu-top-left">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-4">
+                <a href="./" id="logo" title="Tenguu" class="logo-image" style="background-image: url('../../../../assets/img/logo.png')">Tenguu
+                </a>
+            </div>
+            <div class="col-md-4 col-md-offset-2 col-sm-6 col-xs-8 phl0">
+                <div class="header_author">
+                    <a href="#">Amanda green</a>
+                    <img src="../../../../assets/img/user.png" class="user" alt="user">
+                    <a class="ml-3" href="#">Log In</a>
+                </div>
+                <div class="header_ticket">
+                    <a href="#order" class="order_btn">My tickets</a>
+                    <span>3</span>
+                </div>
+                <a href="javascript:;" id="header-search"></a>
+                <div class="button_container" id="toggle">
+    <span class="top"></span>
+    <span class="middle"></span>
+    <span class="bottom"></span>
+</div>
+<div class="overlay" id="overlay">
+<a href="javascript:;" class="close-window"></a>
+  <nav class="overlay-menu">
+    <ul >
+        <li ><a href="./">Home</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="single.html">Single</a></li>
+        <li><a href="#order" class="order_btn">Order</a></li>
+    </ul>
   </nav>
-  <!-- Có dấu "/" là đường dẫn tuyệt đối -->
-  <a href="#" routerLink="/dangnhap" class="signin">
-      <i class="fa fa-user-circle"></i>
-      <span>Đăng nhập</span>
-  </a>
+</div>            </div>
+        </div>
+    </div>
 </header>
