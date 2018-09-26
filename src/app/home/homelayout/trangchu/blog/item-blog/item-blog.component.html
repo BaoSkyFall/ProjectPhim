@@ -1,0 +1,42 @@
+    <article class="product-item hover-dark">
+        <div class="featured-image bg-cover">
+            <iframe width="1100" height="600" [src]="trailerPhim | safe" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div class="entry-title">
+            <ul class="subtitle">
+                <li>Action</li>
+                <li>Science Fiction</li>
+                <li>Adventure</li>
+            </ul>
+            <a href="javascript:;" class="title">Lord of the rings: The return of the kings </a>
+            <div class="entry-date">
+                <span>{{itemPhim.NgayKhoiChieu |date:'dd-MM-yyyy'}}</span>
+            </div>
+            <div class="social-links">
+                <a href="javascript:;">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a href="javascript:;">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a href="javascript:;">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="entry-desc">
+            <div class="row mh0">
+                <div class="col-md-2 col-sm-3 col-xs-12 comming_movie ph0">
+                    <img [src]="itemPhim.HinhAnh" alt="movie">
+                </div>
+                <div class="col-md-8 col-sm-7 col-xs-12 entry-text phl3">
+                    <h3>synopsis</h3>
+                    <p>{{itemPhim.MoTa}}</p>
+                    <a href="javascript:;" class="btn order">Đặt Vé</a>
+                    <a [routerLink]="['/chitiet',itemPhim.MaPhim]" class="btn more mhl20">Xem Chi Tiết</a>
+                </div>
+
+            </div>
+        </div>
+    </article>

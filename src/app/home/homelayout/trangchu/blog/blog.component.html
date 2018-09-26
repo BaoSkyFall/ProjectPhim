@@ -1,0 +1,167 @@
+<h1 class="text-center font-weight-bold display-2"style="color:#FB802D">TIN TỨC PHIM</h1>
+<div class="section-content pvb0 bg-cover" style="background-image: url('../../../assets/img/blog/bg-single.jpg')">
+    <div class="container pvt80">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="slider_coming" class="flexslider">
+                    <ul class="slides">
+                        <li *ngFor="let item of DanhSachPhimDangChieu">
+                            <app-item-blog [itemPhim]="item"></app-item-blog>
+
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- <div id="carousel_coming" class="flexslider">
+          <ul class="slides">
+              <li class="thumb_item bg-cover">
+                  <div class="movie-image">
+                      <a href="#" class="btn fill">Selected</a>
+                      <img src="images/carousel/movie-1.jpg" class="wpc_img" alt="image" />
+                      <div class="entry-desc">
+                          <div class="rating">
+                              <input name="stars" type="radio">
+                              <label>☆</label>
+                              <input name="stars" type="radio">
+                              <label>☆</label>
+                              <input name="stars" type="radio">
+                              <label>☆</label>
+                              <input name="stars" type="radio">
+                              <label>☆</label>
+                              <input name="stars" type="radio">
+                              <label>☆</label>
+                          </div>
+                          <h3 class="entry-title">The Mountian</h3>
+                          <ul class="entry-date">
+                              <li>5 May 2017</li>
+                          </ul>
+                      </div>
+                  </div>
+              </li>
+              <li class="thumb_item bg-cover">
+                  <div class="movie-image">
+                      <a href="#" class="btn fill">Selected</a>
+                      <img src="images/carousel/movie-2.jpg" class="wpc_img" alt="image" />
+                      <div class="entry-desc">
+                          <div class="rating">
+                              <input name="stars" type="radio">
+                              <label>☆</label>
+                              <input name="stars" type="radio">
+                              <label>☆</label>
+                              <input name="stars" type="radio">
+                              <label>☆</label>
+                              <input name="stars" type="radio">
+                              <label>☆</label>
+                              <input name="stars" type="radio">
+                              <label>☆</label>
+                          </div>
+                          <h3 class="entry-title">The Mountian</h3>
+                          <ul class="entry-date">
+                              <li>5 May 2017</li>
+                          </ul>
+                      </div>
+                  </div>
+              </li>
+              <li class="thumb_item bg-cover">
+                  <div class="movie-image">
+                      <a href="#" class="btn fill">Selected</a>
+                      <img src="images/carousel/movie-3.jpg" class="wpc_img" alt="image" />
+                      <div class="entry-desc">
+                          <div class="rating">
+                              <input name="stars" type="radio">
+                              <label>☆</label>
+                              <input name="stars" type="radio">
+                              <label>☆</label>
+                              <input name="stars" type="radio">
+                              <label>☆</label>
+                              <input name="stars" type="radio">
+                              <label>☆</label>
+                              <input name="stars" type="radio">
+                              <label>☆</label>
+                          </div>
+                          <h3 class="entry-title">The Mountian</h3>
+                          <ul class="entry-date">
+                              <li>5 May 2017</li>
+                          </ul>
+                      </div>
+                  </div>
+              </li>
+              <li class="thumb_item bg-cover">
+                  <div class="movie-image">
+                      <a href="#" class="btn fill">Selected</a>
+                      <img src="images/carousel/movie-4.jpg" class="wpc_img" alt="image" />
+                      <div class="entry-desc">
+                          <div class="rating">
+                              <input name="stars" type="radio">
+                              <label>☆</label>
+                              <input name="stars" type="radio">
+                              <label>☆</label>
+                              <input name="stars" type="radio">
+                              <label>☆</label>
+                              <input name="stars" type="radio">
+                              <label>☆</label>
+                              <input name="stars" type="radio">
+                              <label>☆</label>
+                          </div>
+                          <h3 class="entry-title">The Mountian</h3>
+                          <ul class="entry-date">
+                              <li>5 May 2017</li>
+                          </ul>
+                      </div>
+                  </div>
+              </li>
+              <li class="thumb_item bg-cover">
+                  <div class="movie-image">
+                      <a href="#" class="btn fill">Selected</a>
+                      <img src="images/carousel/movie-5.jpg" class="wpc_img" alt="image" />
+                      <div class="entry-desc">
+                          <div class="rating">
+                              <input name="stars" type="radio">
+                              <label>☆</label>
+                              <input name="stars" type="radio">
+                              <label>☆</label>
+                              <input name="stars" type="radio">
+                              <label>☆</label>
+                              <input name="stars" type="radio">
+                              <label>☆</label>
+                              <input name="stars" type="radio">
+                              <label>☆</label>
+                          </div>
+                          <h3 class="entry-title">The Mountian</h3>
+                          <ul class="entry-date">
+                              <li>5 May 2017</li>
+                          </ul>
+                      </div>
+                  </div>
+              </li>
+              <li class="thumb_item bg-cover">
+                  <div class="movie-image">
+                      <a href="#" class="btn fill">Selected</a>
+                      <img src="images/carousel/movie-6.jpg" class="wpc_img" alt="image" />
+                      <div class="entry-desc">
+                          <div class="rating">
+                              <input name="stars" type="radio">
+                              <label>☆</label>
+                              <input name="stars" type="radio">
+                              <label>☆</label>
+                              <input name="stars" type="radio">
+                              <label>☆</label>
+                              <input name="stars" type="radio">
+                              <label>☆</label>
+                              <input name="stars" type="radio">
+                              <label>☆</label>
+                          </div>
+                          <h3 class="entry-title">The Mountian</h3>
+                          <ul class="entry-date">
+                              <li>5 May 2017</li>
+                          </ul>
+                      </div>
+                  </div>
+              </li>
+          </ul>
+      </div> -->
+    </div>
+</div>

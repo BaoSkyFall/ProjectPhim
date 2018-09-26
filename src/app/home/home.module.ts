@@ -28,6 +28,8 @@ import { PipeModule } from '../pipe/pipe.module';
 
 import { DangNhapComponent } from './homelayout/dang-nhap/dang-nhap.component';
 import { RouterModule } from '@angular/router';
+import { BlogComponent } from './homelayout/trangchu/blog/blog.component';
+import { ItemBlogComponent } from './homelayout/trangchu/blog/item-blog/item-blog.component';
 
 @NgModule({
   imports: [
@@ -54,7 +56,7 @@ import { RouterModule } from '@angular/router';
      ItemTintucComponent, 
      LienheComponent, 
      FormlienheComponent, 
-     ThongtinComponent, DanhSachGheComponent, GheComponent, DangKyComponent, DangNhapComponent,
+     ThongtinComponent, DanhSachGheComponent, GheComponent, DangKyComponent, DangNhapComponent, BlogComponent, ItemBlogComponent,
   ],
   exports:[
     HomelayoutComponent, 

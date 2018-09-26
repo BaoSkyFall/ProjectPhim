@@ -1,7 +1,180 @@
-<img [src]="phimItem.HinhAnh" alt="">
-<p>{{phimItem.TenPhim}}</p>
-<iframe width="1000" height="667" [src]="trailerPhim | safe" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-<table class="table">
+<section class="section-content pv12 bg-cover" style="background-image: url('../../../assets/img/blog/bg-single.jpg')">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+
+        <article class="blog-item single">
+
+          <div class="col-md-4 col-sm12">
+            <img [src]="phimItem.HinhAnh" class="img-fluid">
+
+            <!-- <iframe width="374" height="664" [src]="trailerPhim | safe" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen  poster="phimItem.HinhAnh" ></iframe> -->
+            <!-- <a  class="video-player">
+            </a> -->
+          </div>
+          <div class="col-md-8 col-sm-12 col-xs-12 ph0">
+            <div class="post-content bg-cover" style="background-image: url('../../../assets/img/blog/post-single.jpg')">
+              <div class="content-meta">
+                <h2 class="entry-title">{{phimItem.TenPhim}}
+                  <span>Action Movie</span>
+                </h2>
+                <!-- <div class="social-links">
+                  <a href="javascript:;">
+                    <i class="fa fa-facebook"></i>
+                  </a>
+                  <a href="javascript:;">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                  <a href="javascript:;">
+                    <i class="fa fa-user"></i>
+                  </a>
+                </div> -->
+              </div>
+
+              <p class="entry-text">{{phimItem.MoTa}}</p>
+              <div class="info-content">
+                <ul class="item-info">
+                  <li>
+                    <span>Thời Lượng:</span>
+                    <p>1hr 48 min</p>
+                  </li>
+                  <li>
+                    <span>Thể Loại:</span>
+                    <p>Action ,triller</p>
+                  </li>
+                  <li>
+                    <span>Đạo Diễn:</span>
+                    <p>Timothy Miller</p>
+                  </li>
+                  <li>
+                    <span>Diễn Viên:</span>
+                    <p>Monica Baccarin , Ryan Ray</p>
+                  </li>
+                  <li>
+                    <span>Ngày Khởi Chiếu:</span>
+                    <p>{{phimItem.NgayKhoiChieu |date:'dd-MM-yyyy'}}</p>
+                  </li>
+                </ul>
+                <!-- <div class="item-info-rate">
+                  <div class="chart-cirle">
+                    <div class="chart-circle-l">
+                      <div class="circle-chart" data-circle-width="7" data-percent="64" data-text="6.4">
+                      </div>
+                      <span>AMDB Rating</span>
+                    </div>
+                    <div class="chart-circle-r">
+                      <div class="circle-chart" data-circle-width="7" data-percent="84" data-text="8.4">
+                      </div>
+                      <span>Rotten Rating</span>
+                    </div>
+                  </div>
+
+                  <div class="wpc-skills animated">
+                    <div class="skill-block">
+                      <span class="timer" data-to="70" data-speed="500">70 - Metacritic </span>
+                      <div class="skill-line">
+                        <div class="line-fill" data-width-pb="70%" style="width: 70%;"></div>
+                      </div>
+                    </div>
+                    <div class="skill-block">
+                      <span class="timer" data-to="56" data-speed="500"> 5.6 - Metacritic </span>
+                      <div class="skill-line">
+                        <div class="line-fill" data-width-pb="56%" style="width: 56%;"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+              <div class="content-footer pt-4 d-flex flex-column">
+                  <h2 class="entry-title w-100 font-italic text-center font-weight-bold" style="color: #FB802D">Showtimes</h2>
+                
+                <div *ngFor="let lichChieu of phimItem.LichChieu">
+                  <span>{{lichChieu.NgayChieuGioChieu |date:'dd-MM-yyyy'}}</span>
+                  <ul class="mdate">
+                    <li>
+                      <a [routerLink]="['/datve',lichChieu.MaLichChieu]">
+                        <i>{{lichChieu.NgayChieuGioChieu |date:'hh:mm' + 01:00 |date:'hh:mm'}}</i>
+                      </a>
+                    </li>
+                    <li>
+                      <a [routerLink]="['/datve',lichChieu.MaLichChieu]">
+                        <i>{{lichChieu.NgayChieuGioChieu |date:'hh:mm'}}</i>
+                      </a>
+                    </li>
+                    <li>
+                      <a [routerLink]="['/datve',lichChieu.MaLichChieu]">
+                        <i>{{lichChieu.NgayChieuGioChieu |date:'hh:mm'}}</i>
+                      </a>
+                    </li>
+                    <li>
+                      <a [routerLink]="['/datve',lichChieu.MaLichChieu]">
+                        <i>{{lichChieu.NgayChieuGioChieu |date:'hh:mm'}}</i>
+                      </a>
+                    </li>
+                    <li>
+                      <a [routerLink]="['/datve',lichChieu.MaLichChieu]">
+                        <i>{{lichChieu.NgayChieuGioChieu |date:'hh:mm'}}</i>
+                      </a>
+                    </li>
+                    <li>
+                      <a [routerLink]="['/datve',lichChieu.MaLichChieu]">
+                        <i>{{lichChieu.NgayChieuGioChieu |date:'hh:mm'}}</i>
+                      </a>
+                    </li>
+                    <li>
+                      <a [routerLink]="['/datve',lichChieu.MaLichChieu]">
+                        <i>{{lichChieu.NgayChieuGioChieu |date:'hh:mm'}}</i>
+                      </a>
+                    </li>
+                    <!-- <li>
+                      <a [routerLink]="['/datve',lichChieu.MaLichChieu]">
+                        <a href="javascript:;">
+                            <i>16:40</i>
+                        </a>
+                    </li>
+                    <li>
+                      <a [routerLink]="['/datve',lichChieu.MaLichChieu]">
+                        <a href="javascript:;">
+                            <i>18:10</i>
+                        </a>
+                    </li>
+                    <li>
+                      <a [routerLink]="['/datve',lichChieu.MaLichChieu]">
+                        <a href="javascript:;">
+                            <i>20:20</i>
+                        </a>
+                    </li>
+                    <li>
+                      <a [routerLink]="['/datve',lichChieu.MaLichChieu]">
+                        <a href="javascript:;">
+                            <i>21:20</i>
+                        </a>
+                    </li> -->
+
+                  </ul>
+                  <!-- <a href="#order" class="order_btn btn order text-right">Mua Vé</a><br> -->
+                </div>
+
+                <a href="#order" class="order_btn btn order text-center">Mua Vé</a>
+              </div>
+
+            </div>
+
+          </div>
+        </article>
+      </div>
+    </div>
+
+  </div>
+  <div class="pt-5 mt-5">
+    <app-danhsachphim></app-danhsachphim>
+  </div>
+
+</section>
+
+<!-- <iframe width="1000" height="667" [src]="trailerPhim | safe" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+<!-- <table class="table">
   <thead>
     <tr>
       <th>Ngày Chiếu</th>
@@ -12,7 +185,7 @@
     <tr *ngFor="let lichChieu of phimItem.LichChieu">
       <td>{{lichChieu.NgayChieuGioChieu |date:'dd-MM-yyyy'}}</td>
       <td [routerLink]="['/datve',lichChieu.MaLichChieu]">{{lichChieu.NgayChieuGioChieu |date:'hh:mm'}}</td>
-      
+
     </tr>
   </tbody>
-</table>
+</table> -->
